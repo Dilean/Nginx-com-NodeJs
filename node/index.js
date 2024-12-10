@@ -1,4 +1,5 @@
 const express = require('express')
+const app = express()
 const mysql = require('mysql');
 
 var con = mysql.createConnection({
@@ -10,7 +11,7 @@ var con = mysql.createConnection({
 
 con.connect();
 
-const app = express()
+
 const port = 3000
 
 app.get('/',(req, res) => {
