@@ -22,10 +22,11 @@ services:
     restart: always
     tty: true
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./mysql/database:/var/lib/mysql
     environment: 
       MYSQL_DATABASE: nodedb
-      MYSQL_ROOT_PASSWORD: dilean123
+      MYSQL_ROOT_PASSWORD: root
     networks:
       - node-network    
     healthcheck:
